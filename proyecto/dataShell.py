@@ -1,27 +1,3 @@
-# Evaluacion_M7_S5
-Proyecto educativo
-
-```python
-from django.db import models
-
-class Fabrica(models.Model):
-    nombre = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.nombre
-
-
-class Producto(models.Model):
-    nombre = models.CharField(max_length=100)
-    descripcion = models.TextField()
-    precio = models.DecimalField(max_digits=10, decimal_places=2)
-    fabrica = models.ForeignKey(Fabrica, on_delete=models.CASCADE, related_name="fabricas")
-
-    def __str__(self):
-        return self.nombre
-```
-
-```python
 import os
 import django
 from tabulate import tabulate
@@ -69,7 +45,3 @@ def mostrar_datos():
 if __name__ == "__main__":
     poblar_datos()  # Llama a la función para poblar los datos
     mostrar_datos()  # Muestra los datos en formato tabla
-```
-# Resultado:
-
-![image](./image/Evaluacion_M7_S5.webp)
